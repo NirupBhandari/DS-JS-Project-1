@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Returning Index-</title>
+</head>
+
+<body>
+
+    <body style="text-align:center;">
+        <h1 style="color:green;">
+            Finding Index of All Occurrences
+        </h1>
+
+        <p id="GK_UP" style="font-size: 15px;
+                            font-weight: bold;">
+        </p>
+
+        <button onclick="GK_Fun()">
+            Click Here
+        </button>
+
+        <p id="GK_DOWN" style="color:green;
+                                font-size: 20px;
+                                font-weight: bold;">
+        </p>
+
+        <script>
+            var up = document.getElementById('GK_UP');
+            var down = document.getElementById('GK_DOWN');
+
+            var arr = [
+                'GK', 'Science', 'English',
+                'Computer Science', 'Science',
+                'GK', 'GK'
+            ];
+
+            var elm = 'GK';
+
+            up.innerHTML = "Click on the button to find "
+                + "the position of element in "
+                + "array.<br><br>Array = ["
+                + arr + "]<br>" + "Element - '"
+                + elm + "'";
+
+            function getInd(arr, val) {
+                var index = [], i = -1;
+                while ((i = arr.indexOf(val, i + 1)) != -1) {
+                    index.push(i);
+                }
+                return index;
+            }
+
+            function GK_Fun() {
+                down.innerHTML = getInd(arr, elm);
+            }
+        </script>
+    </body>
+</body>
+
+</html>
